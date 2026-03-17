@@ -21,12 +21,10 @@ body {
   font-family: "Exo 2", sans-serif;
   line-height: 1.45;
   color: var(--text);
-  background-color: var(--bg);
-  background-image:
-    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.55), transparent 35%),
-    radial-gradient(circle at 85% 5%, rgba(255, 255, 255, 0.45), transparent 30%),
-    linear-gradient(170deg, #d7ecff 0%, #b7d7ff 45%, #a1ccff 100%);
+  background: linear-gradient(180deg, rgba(223,242,255,0.96), rgba(184,213,255,0.96)), url("LCF NEW.webp") center/cover no-repeat;
+  background-color: #d7efff;
   min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .wrapper {
