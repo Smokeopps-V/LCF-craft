@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucchese</title>
+  <link rel="stylesheet" href="style.css?v=20260214-13">
+</head>
+<body>
+
+<div class="wrapper">
+  <header class="hero">
+    <h1>Lucchese</h1>
+    <p class="subtitle">Crafting planner / materials tracker</p>
+    <p id="resultCount" class="result-count" aria-live="polite"></p>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search item name..." aria-label="Search item name" autocomplete="off">
+    <select id="category" aria-label="Filter by category">
+      <option value="all">All Items</option>
+      <option value="attachments">Attachments</option>
+      <option value="tools">Tools</option>
+      <option value="weapons">Weapons</option>
+      <option value="materials">Materials</option>
+    </select>
+    <select id="sortBy" aria-label="Sort items">
+      <option value="nameAsc">Sort: Name (A-Z)</option>
+      <option value="levelAsc">Sort: Level (Low-High)</option>
+      <option value="levelDesc">Sort: Level (High-Low)</option>
+      <option value="xpAsc">Sort: XP (Low-High)</option>
+      <option value="xpDesc">Sort: XP (High-Low)</option>
+      <option value="capAsc">Sort: XP Cap (Low-High)</option>
+      <option value="capDesc">Sort: XP Cap (High-Low)</option>
+    </select>
+  </div>
+
+  <div class="quick-filters" role="group" aria-label="Quick category filters">
+    <button type="button" class="chip is-active" data-category="all" aria-pressed="true">All</button>
+    <button type="button" class="chip" data-category="attachments" aria-pressed="false">Attachments</button>
+    <button type="button" class="chip" data-category="tools" aria-pressed="false">Tools</button>
+    <button type="button" class="chip" data-category="weapons" aria-pressed="false">Weapons</button>
+    <button type="button" class="chip" data-category="materials" aria-pressed="false">Materials</button>
+    <button type="button" id="blueprintOnlyBtn" class="blueprint-chip" aria-pressed="false">Blueprint Only</button>
+  </div>
+
+  <div class="planner-grid">
+    <div id="itemList" class="item-list"></div>
+    <aside class="side-panel">
+      <section class="panel-block" aria-labelledby="shoppingTitle">
+        <div class="panel-head">
+          <h3 id="shoppingTitle">Shopping List</h3>
+          <button type="button" id="clearShoppingBtn" class="mini-btn">Clear</button>
+        </div>
+        <p id="shoppingSummary" class="panel-subtext" aria-live="polite">No items in list yet.</p>
+        <div id="shoppingItems" class="shopping-items" aria-live="polite"></div>
+      </section>
+
+      <section class="panel-block" aria-labelledby="totalsTitle">
+        <h3 id="totalsTitle">Combined Materials</h3>
+        <p class="panel-subtext">Enter owned stock to see remaining needs.</p>
+        <p id="shoppingTotalsSummary" class="panel-subtext panel-subtext-strong">Raw Total 0 | Need Total 0</p>
+        <div id="shoppingTotals" class="shopping-totals"></div>
+      </section>
+
+    </aside>
+  </div>
+</div>
+
+<div id="popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-content">
+    <button type="button" id="closePopupBtn" class="close-btn" aria-label="Close item details">&times;</button>
+    <h2 id="popupTitle"></h2>
+    <div class="popup-meta">
+      <span id="popupLevel" class="meta-pill"></span>
+      <span id="popupXP" class="meta-pill"></span>
+      <span id="popupStopXP" class="meta-pill"></span>
+      <span id="popupBP" class="meta-pill"></span>
+    </div>
+    <div class="craft-qty-row">
+      <label for="popupCraftQty">Craft amount</label>
+      <input id="popupCraftQty" type="number" min="1" step="1" value="1" inputmode="numeric">
+      <button type="button" id="addToListBtn" class="copy-btn">Add to list</button>
+      <button type="button" id="copyMaterialsBtn" class="copy-btn">Copy materials</button>
+    </div>
+    <p id="copyFeedback" class="copy-feedback" aria-live="polite"></p>
+    <div class="materials-head">
+      <h3 class="materials-title">Materials Needed</h3>
+      <span id="popupMaterialsHint" class="materials-head-hint">Combined totals</span>
+    </div>
+    <div id="popupMaterialTotals" class="popup-material-totals"></div>
+    <div id="popupMaterials"></div>
+  </div>
+</div>
+
+<script src="config.js?v=20260213-4"></script>
+<script src="script.js?v=20260214-8"></script>
+</body>
+</html>
