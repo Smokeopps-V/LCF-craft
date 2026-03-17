@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Chakra+Petch:wght@400;500;600;700&family=Exo+2:wght@400;500;600&display=swap");
 
 :root {
-  --bg: #03112f;
-  --panel: #0d1f49;
-  --panel-alt: #0f234f;
-  --border: #2f4a83;
-  --text: #d4ecff;
-  --muted: #a8c6e5;
-  --accent: #4cd7ff;
-  --accent-strong: #89bcff;
+  --bg: #cbe8ff;
+  --panel: #dbeeff;
+  --panel-alt: #cde8ff;
+  --border: #9ec8f3;
+  --text: #1f3a5f;
+  --muted: #6e8daf;
+  --accent: #4abaff;
+  --accent-strong: #66c2ff;
   --warning: #ffd97d;
 }
 
